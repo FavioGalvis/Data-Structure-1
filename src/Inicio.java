@@ -13,7 +13,8 @@ import javax.swing.JList;
  */
 public class Inicio extends javax.swing.JFrame {
   private Listas list= new Listas();
-  private int dato,dato1,dato2;
+  private int dato1, dato2;
+  Nodo x = new Nodo();
     public Inicio() {
         initComponents();
     }
@@ -28,31 +29,37 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtdato = new javax.swing.JTextField();
+        txtid = new javax.swing.JTextField();
         btnInicio = new javax.swing.JButton();
         btnFinal = new javax.swing.JButton();
         btnImprimir = new javax.swing.JButton();
         btnPares = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnAscendente = new javax.swing.JButton();
         btnAntes = new javax.swing.JButton();
         btnDespues = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        txtdato2 = new javax.swing.JTextField();
         btnAleatorio = new javax.swing.JButton();
         btnMenor = new javax.swing.JButton();
-        txtdato3 = new javax.swing.JTextField();
+        txtdato1 = new javax.swing.JTextField();
         btnContar = new javax.swing.JButton();
         btnInverso = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
-        txtdato4 = new javax.swing.JTextField();
+        txtdato2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtnombre = new javax.swing.JTextField();
+        txtgenero = new javax.swing.JTextField();
+        txtprograma = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtvalor = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion de Listas simple");
         setResizable(false);
 
-        jLabel1.setText("Dato");
+        jLabel1.setText("Datos del Estudiante");
 
         btnInicio.setText("Ins. Inicio");
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -93,13 +100,6 @@ public class Inicio extends javax.swing.JFrame {
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
-            }
-        });
-
-        btnAscendente.setText("Ordenar Az");
-        btnAscendente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAscendenteActionPerformed(evt);
             }
         });
 
@@ -152,12 +152,15 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        btnActualizar.setText("Actualizar con");
-        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Identificacion");
+
+        jLabel3.setText("Nombres");
+
+        jLabel4.setText("Genero");
+
+        jLabel5.setText("Programa");
+
+        jLabel6.setText("Valor de Matricula");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,89 +168,113 @@ public class Inicio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnImprimir)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnMenor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnImprimir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnMenor)
+                        .addComponent(btnAleatorio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPares)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtdato2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtdato, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnInicio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFinal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnAscendente, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAntes, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnDespues, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtdato2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAleatorio)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtdato3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnContar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnInverso, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdato4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(76, 76, 76)
+                                    .addComponent(txtgenero, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(69, 69, 69)
+                                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtprograma, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel5)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(btnInverso, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                                        .addComponent(btnPares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnContar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addGap(185, 185, 185)
+                                    .addComponent(btnAntes)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnDespues, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(btnInicio)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnFinal))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(txtdato1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnEliminar))))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtdato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
                     .addComponent(btnInicio)
-                    .addComponent(btnFinal)
-                    .addComponent(btnBuscar))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btnAntes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDespues)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAleatorio)
-                            .addComponent(txtdato3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnActualizar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtdato2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnContar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnInverso)))
+                    .addComponent(btnFinal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtdato4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnAscendente)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtgenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtprograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAntes)
+                    .addComponent(btnDespues))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar)
+                    .addComponent(txtdato1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnImprimir)
+                    .addComponent(btnAleatorio)
+                    .addComponent(txtdato2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnMenor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInverso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPares)
                     .addComponent(btnSalir)
-                    .addComponent(btnMenor)
-                    .addComponent(btnPares))
-                .addGap(23, 23, 23))
+                    .addComponent(btnContar))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -255,15 +282,31 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-     dato=Integer.parseInt(txtdato.getText());
-     list.Ins_inicio(dato);
-     txtdato.setText("");
+     x.id=Integer.parseInt(txtid.getText());
+     x.valor=Double.parseDouble(txtvalor.getText());
+     x.nombre=txtvalor.getText();
+     x.genero=txtgenero.getText();
+     x.programa=txtprograma.getText();
+     list.Ins_inicio(x);
+     txtid.setText("");
+     txtvalor.setText("");
+     txtnombre.setText("");
+     txtgenero.setText("");
+     txtprograma.setText("");
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalActionPerformed
-     dato=Integer.parseInt(txtdato.getText());
-     list.Ins_final(dato);
-     txtdato.setText("");
+     x.id=Integer.parseInt(txtid.getText());
+     x.valor=Double.parseDouble(txtvalor.getText());
+     x.nombre=txtvalor.getText();
+     x.genero=txtgenero.getText();
+     x.programa=txtprograma.getText();
+     list.Ins_final(x);
+     txtid.setText("");
+     txtvalor.setText("");
+     txtnombre.setText("");
+     txtgenero.setText("");
+     txtprograma.setText("");
     }//GEN-LAST:event_btnFinalActionPerformed
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
@@ -279,8 +322,8 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-     dato=Integer.parseInt(txtdato.getText());
-     Nodo p= list.Buscar(dato);
+     dato1=Integer.parseInt(txtdato1.getText());
+     Nodo p= list.Buscar(dato1);
      if(p!=null)
        javax.swing.JOptionPane.showMessageDialog(null,
           "Encontrado en "+p);
@@ -290,41 +333,52 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnAntesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAntesActionPerformed
-        dato1=Integer.parseInt(txtdato.getText());
-        dato2=Integer.parseInt(txtdato2.getText());
-        list.Ins_antes_de(dato1,dato2);
-        txtdato.setText("");
-        txtdato2.setText("");
+        dato1=Integer.parseInt(txtdato1.getText());
+        x.id=Integer.parseInt(txtid.getText());
+        x.valor=Double.parseDouble(txtvalor.getText());
+        x.nombre=txtvalor.getText();
+        x.genero=txtgenero.getText();
+        x.programa=txtprograma.getText();
+        list.Ins_antes_de(dato1,x);
+        txtid.setText("");
+        txtvalor.setText("");
+        txtnombre.setText("");
+        txtgenero.setText("");
+        txtprograma.setText("");
+        txtdato1.setText("");
     }//GEN-LAST:event_btnAntesActionPerformed
 
     private void btnDespuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDespuesActionPerformed
-        dato1=Integer.parseInt(txtdato.getText());
-        dato2=Integer.parseInt(txtdato2.getText());
-        list.Ins_despues_de(dato1,dato2);
-        txtdato.setText("");
-        txtdato2.setText("");
+        dato1=Integer.parseInt(txtdato1.getText());
+        x.id=Integer.parseInt(txtid.getText());
+        x.valor=Double.parseDouble(txtvalor.getText());
+        x.nombre=txtvalor.getText();
+        x.genero=txtgenero.getText();
+        x.programa=txtprograma.getText();
+        list.Ins_despues_de(dato1,x);
+        txtid.setText("");
+        txtvalor.setText("");
+        txtnombre.setText("");
+        txtgenero.setText("");
+        txtprograma.setText("");
+        txtdato1.setText("");
     }//GEN-LAST:event_btnDespuesActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        dato2=Integer.parseInt(txtdato2.getText());
-        list.Eliminar(dato2);
-        txtdato.setText("");
-        txtdato2.setText("");
+        dato1=Integer.parseInt(txtdato1.getText());
+        list.Eliminar(dato1);
+        txtdato1.setText("");
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnMenorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenorActionPerformed
-        list.Buscar_menor();
+        list.Buscar_menor_valor();
     }//GEN-LAST:event_btnMenorActionPerformed
 
     private void btnAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAleatorioActionPerformed
-        dato=Integer.parseInt(txtdato3.getText());
-        list.Ins_aleatorios(dato);
-        txtdato3.setText("");
+        dato2=Integer.parseInt(txtdato2.getText());
+        list.Ins_aleatorios(dato2);
+        txtdato2.setText("");
     }//GEN-LAST:event_btnAleatorioActionPerformed
-
-    private void btnAscendenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAscendenteActionPerformed
-        list.Imprimir_ascendente();
-    }//GEN-LAST:event_btnAscendenteActionPerformed
 
     private void btnContarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContarActionPerformed
         list.Contar_nodos();
@@ -333,15 +387,6 @@ public class Inicio extends javax.swing.JFrame {
     private void btnInversoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInversoActionPerformed
         list.Imprimir_inverso();
     }//GEN-LAST:event_btnInversoActionPerformed
-
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        Nodo p = list.Buscar(Integer.parseInt(txtdato.getText()));
-        if (p!=null){
-            p.Dato=Integer.parseInt(txtdato4.getText());
-            txtdato.setText("");
-            txtdato4.setText("");
-        }
-    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,10 +424,8 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAleatorio;
     private javax.swing.JButton btnAntes;
-    private javax.swing.JButton btnAscendente;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnContar;
     private javax.swing.JButton btnDespues;
@@ -395,9 +438,17 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btnPares;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtdato;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField txtdato1;
     private javax.swing.JTextField txtdato2;
-    private javax.swing.JTextField txtdato3;
-    private javax.swing.JTextField txtdato4;
+    private javax.swing.JTextField txtgenero;
+    private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtprograma;
+    private javax.swing.JTextField txtvalor;
     // End of variables declaration//GEN-END:variables
 }

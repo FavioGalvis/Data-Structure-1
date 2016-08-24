@@ -1,19 +1,24 @@
 public class Nodo {
- public int Dato;
+ public int id;
+ public String nombre;
+ public String genero;
+ public String programa;
+ public double valor;
  public Nodo sig;//liga
  public Nodo ant;//liga
- 
  public Nodo()
  {
-     sig=null;
-     ant=null;
+     sig=this;
+     ant=this;
  }       
- 
- public Nodo(int D)
+ public Nodo(Nodo data)
  {
-     Dato=D;
-     sig=null;
-     ant=null;
- }        
- 
+     id=data.id;
+     nombre=data.nombre;
+     genero=data.genero;
+     programa=data.programa;
+     valor=data.valor;
+     sig=this;
+     ant=this;
+ }
 }
