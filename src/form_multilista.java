@@ -9,8 +9,8 @@
  */
 public class form_multilista extends javax.swing.JFrame {
  private Multilista list;
- private Nodo_Padre padre;
- private Nodo_Hijo hijo;
+ private Nodo_Asignatura asignatura;
+ private Nodo_Estudiante estudiante;
     
     /**
      * Creates new form form_multilista
@@ -18,16 +18,27 @@ public class form_multilista extends javax.swing.JFrame {
     public form_multilista() {
         initComponents();
         list=new Multilista();
-        padre=new Nodo_Padre();
-        hijo=new Nodo_Hijo();
+        asignatura=new Nodo_Asignatura();
+        estudiante=new Nodo_Estudiante();
     }
 
-    public void nuevo()
+    public void nuevo_estudiante()
     {
-        txid.setText("");
-        txip.setText("");
-        txid.requestFocus();
-    }        
+        txtnom1.setText("");
+        txtnom2.setText("");
+        txtid.setText("");
+        txtnota.setText("");
+        txtid.requestFocus();
+    }
+    public void nueva_asignatura()
+    {
+        txtnom1.setText("");
+        txtnom2.setText("");
+        txtid.setText("");
+        txtnota.setText("");
+        txtcod.setText("");
+        txtcod.requestFocus();
+    }  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,62 +49,74 @@ public class form_multilista extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txid = new javax.swing.JTextField();
+        txtnom1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txip = new javax.swing.JTextField();
-        btsavepc = new javax.swing.JButton();
-        btsavesala = new javax.swing.JButton();
-        btmostrar = new javax.swing.JButton();
+        txtnota = new javax.swing.JTextField();
+        btnguardarestudiante = new javax.swing.JButton();
+        btninsertarasignatura = new javax.swing.JButton();
+        btnimprimir1 = new javax.swing.JButton();
         btsalir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtcod = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtid = new javax.swing.JTextField();
+        txtnom2 = new javax.swing.JTextField();
+        btnimprimir2 = new javax.swing.JButton();
+        btncancelarestudiante = new javax.swing.JButton();
+        btnimprimir3 = new javax.swing.JButton();
+        btneliminarasignatura = new javax.swing.JToggleButton();
+        btnimprimir4 = new javax.swing.JToggleButton();
+        btnimprimir5 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Multilistas -Gestión de pc- ");
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Id Sala");
+        jLabel1.setText("Codigo de Asignatura");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 20, 50, 14);
+        jLabel1.setBounds(10, 30, 110, 14);
 
-        txid.addActionListener(new java.awt.event.ActionListener() {
+        txtnom1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txidActionPerformed(evt);
+                txtnom1ActionPerformed(evt);
             }
         });
-        getContentPane().add(txid);
-        txid.setBounds(90, 20, 130, 30);
+        getContentPane().add(txtnom1);
+        txtnom1.setBounds(140, 60, 130, 30);
 
-        jLabel3.setText("Ip");
+        jLabel3.setText("Nota Final Estudiante");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 110, 50, 14);
-        getContentPane().add(txip);
-        txip.setBounds(90, 110, 180, 30);
+        jLabel3.setBounds(300, 110, 140, 14);
+        getContentPane().add(txtnota);
+        txtnota.setBounds(450, 100, 180, 30);
 
-        btsavepc.setText("Guardar PC");
-        btsavepc.addActionListener(new java.awt.event.ActionListener() {
+        btnguardarestudiante.setText("Guardar Estudiante");
+        btnguardarestudiante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btsavepcActionPerformed(evt);
+                btnguardarestudianteActionPerformed(evt);
             }
         });
-        getContentPane().add(btsavepc);
-        btsavepc.setBounds(330, 120, 120, 23);
+        getContentPane().add(btnguardarestudiante);
+        btnguardarestudiante.setBounds(500, 150, 130, 23);
 
-        btsavesala.setText("Guardar Sala");
-        btsavesala.addActionListener(new java.awt.event.ActionListener() {
+        btninsertarasignatura.setText("Insertar Asignatura");
+        btninsertarasignatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btsavesalaActionPerformed(evt);
+                btninsertarasignaturaActionPerformed(evt);
             }
         });
-        getContentPane().add(btsavesala);
-        btsavesala.setBounds(330, 20, 120, 23);
+        getContentPane().add(btninsertarasignatura);
+        btninsertarasignatura.setBounds(10, 110, 127, 23);
 
-        btmostrar.setText("Mostrar");
-        btmostrar.addActionListener(new java.awt.event.ActionListener() {
+        btnimprimir1.setText("Imprimir Listado General de Asignaturas y Estudiantes");
+        btnimprimir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmostrarActionPerformed(evt);
+                btnimprimir1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btmostrar);
-        btmostrar.setBounds(40, 210, 100, 23);
+        getContentPane().add(btnimprimir1);
+        btnimprimir1.setBounds(10, 220, 320, 23);
 
         btsalir.setText("Salir");
         btsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -102,9 +125,87 @@ public class form_multilista extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btsalir);
-        btsalir.setBounds(330, 210, 110, 23);
+        btsalir.setBounds(520, 250, 110, 23);
 
-        setSize(new java.awt.Dimension(499, 293));
+        jLabel2.setText("Nombre de Asignatura");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 70, 110, 14);
+
+        txtcod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcodActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtcod);
+        txtcod.setBounds(140, 20, 130, 30);
+
+        jLabel4.setText("Identificacion de Estudiante");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(300, 30, 140, 14);
+
+        jLabel5.setText("Nombre de Estudiante");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(300, 70, 140, 14);
+        getContentPane().add(txtid);
+        txtid.setBounds(450, 20, 180, 30);
+        getContentPane().add(txtnom2);
+        txtnom2.setBounds(450, 60, 180, 30);
+
+        btnimprimir2.setText("Imprimir Estudiantes de la Asignatura");
+        btnimprimir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnimprimir2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnimprimir2);
+        btnimprimir2.setBounds(10, 140, 210, 23);
+
+        btncancelarestudiante.setText("Cancelar Matricula");
+        btncancelarestudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelarestudianteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btncancelarestudiante);
+        btncancelarestudiante.setBounds(360, 150, 130, 23);
+
+        btnimprimir3.setText("Imprimir Promedios de Asignaturas y General");
+        btnimprimir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnimprimir3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnimprimir3);
+        btnimprimir3.setBounds(10, 250, 320, 23);
+
+        btneliminarasignatura.setText("Eliminar Asignatura");
+        btneliminarasignatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarasignaturaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btneliminarasignatura);
+        btneliminarasignatura.setBounds(140, 110, 130, 23);
+
+        btnimprimir4.setText("Imprimir promedio de estudiantes (cantidad) por Asignatura");
+        btnimprimir4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnimprimir4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnimprimir4);
+        btnimprimir4.setBounds(10, 190, 320, 23);
+
+        btnimprimir5.setText("Creditos");
+        btnimprimir5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnimprimir5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnimprimir5);
+        btnimprimir5.setBounds(410, 250, 105, 23);
+
+        setSize(new java.awt.Dimension(663, 327));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,37 +214,104 @@ public class form_multilista extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btsalirActionPerformed
 
-    private void btsavesalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsavesalaActionPerformed
+    private void btninsertarasignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertarasignaturaActionPerformed
         // TODO add your handling code here:
-        padre.dato=Integer.parseInt(txid.getText());
-        list.insertar_nodo_padre_final(padre);
-        nuevo();
-        javax.swing.JOptionPane.showMessageDialog(this,"Sala Insertada");
-        
-    }//GEN-LAST:event_btsavesalaActionPerformed
-
-    private void btsavepcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsavepcActionPerformed
-        // TODO add your handling code here:
-        if(txid.getText().equals(""))
+        if(txtcod.getText().equals("") || txtnom1.getText().equals(""))
         {
-            javax.swing.JOptionPane.showMessageDialog(this,"Digite dato para nodo Padre");
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite el nombre y codigo de la asignatura");
+            return;
+        }
+        asignatura.cod=Integer.parseInt(txtcod.getText());
+        asignatura.asignatura=txtnom1.getText();
+        list.insertar_nodo_padre_final(asignatura);
+        nueva_asignatura();
+        javax.swing.JOptionPane.showMessageDialog(this,"Asignatura Insertada");
+        
+    }//GEN-LAST:event_btninsertarasignaturaActionPerformed
+
+    private void btnguardarestudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarestudianteActionPerformed
+        // TODO add your handling code here:
+        if(txtid.getText().equals("") || txtnom2.getText().equals("") || txtnota.getText().equals(""))
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite datos completos del estudiante");
+            return;
+        }
+        if(txtcod.getText().equals(""))
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite asignatura");
             return;
         }  
-        padre.dato=Integer.parseInt(txid.getText());
-        hijo.dato=Integer.parseInt(txip.getText());
-        list.insertar_nodo_hijo_final(padre, hijo);
-        nuevo();
-        javax.swing.JOptionPane.showMessageDialog(this,"Hijo Insertado");
-    }//GEN-LAST:event_btsavepcActionPerformed
+        asignatura.cod=Integer.parseInt(txtcod.getText());
+        estudiante.id=Integer.parseInt(txtid.getText());
+        estudiante.nombre=txtnom2.getText();
+        estudiante.nota=Double.parseDouble(txtnota.getText());
+        list.insertar_nodo_hijo_final(asignatura, estudiante);
+        nuevo_estudiante();
+        javax.swing.JOptionPane.showMessageDialog(this,"Estudiante Insertado");
+    }//GEN-LAST:event_btnguardarestudianteActionPerformed
 
-    private void btmostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmostrarActionPerformed
-        // TODO add your handling code here:
+    private void btnimprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir1ActionPerformed
         list.imprimir_padres_hijos();
-    }//GEN-LAST:event_btmostrarActionPerformed
+    }//GEN-LAST:event_btnimprimir1ActionPerformed
 
-    private void txidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txidActionPerformed
+    private void txtnom1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnom1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txidActionPerformed
+    }//GEN-LAST:event_txtnom1ActionPerformed
+
+    private void txtcodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodActionPerformed
+
+    private void btnimprimir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir2ActionPerformed
+        if(txtcod.getText().equals(""))
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite el codigo de la asignatura");
+            return;
+        }
+        asignatura.cod=Integer.parseInt(txtcod.getText());
+        list.imprimir_hijos(asignatura);
+        nueva_asignatura();
+    }//GEN-LAST:event_btnimprimir2ActionPerformed
+
+    private void btncancelarestudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarestudianteActionPerformed
+        if(txtid.getText().equals(""))
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite id del estudiante");
+            return;
+        }
+        if(txtcod.getText().equals(""))
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite asignatura");
+            return;
+        }  
+        asignatura.cod=Integer.parseInt(txtcod.getText());
+        estudiante.id=Integer.parseInt(txtid.getText());
+        list.eliminar_nodo_hijo(asignatura, estudiante);
+        nuevo_estudiante();
+    }//GEN-LAST:event_btncancelarestudianteActionPerformed
+
+    private void btnimprimir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir3ActionPerformed
+        list.promedio_general();
+    }//GEN-LAST:event_btnimprimir3ActionPerformed
+
+    private void btnimprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir4ActionPerformed
+        list.promedio_por_asignatura();
+    }//GEN-LAST:event_btnimprimir4ActionPerformed
+
+    private void btneliminarasignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarasignaturaActionPerformed
+        if(txtcod.getText().equals(""))
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"Digite el codigo de la asignatura");
+            return;
+        }
+        asignatura.cod=Integer.parseInt(txtcod.getText());
+        list.eliminar_nodo_padre(asignatura);
+        nueva_asignatura();
+    }//GEN-LAST:event_btneliminarasignaturaActionPerformed
+
+    private void btnimprimir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir5ActionPerformed
+        javax.swing.JOptionPane.showMessageDialog(this,"Elaborado por Favio Galvis - 201521268405");
+    }//GEN-LAST:event_btnimprimir5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,13 +348,25 @@ public class form_multilista extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btmostrar;
+    private javax.swing.JButton btncancelarestudiante;
+    private javax.swing.JToggleButton btneliminarasignatura;
+    private javax.swing.JButton btnguardarestudiante;
+    private javax.swing.JButton btnimprimir1;
+    private javax.swing.JButton btnimprimir2;
+    private javax.swing.JButton btnimprimir3;
+    private javax.swing.JToggleButton btnimprimir4;
+    private javax.swing.JToggleButton btnimprimir5;
+    private javax.swing.JButton btninsertarasignatura;
     private javax.swing.JButton btsalir;
-    private javax.swing.JButton btsavepc;
-    private javax.swing.JButton btsavesala;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txid;
-    private javax.swing.JTextField txip;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField txtcod;
+    private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtnom1;
+    private javax.swing.JTextField txtnom2;
+    private javax.swing.JTextField txtnota;
     // End of variables declaration//GEN-END:variables
 }
